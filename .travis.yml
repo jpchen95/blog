@@ -25,3 +25,12 @@ cache: bundler # caching bundler gem packages will speed up build
 # Optional: disable email notifications about the outcome of your builds
 notifications:
   email: false
+
+deploy:
+  provider: s3
+  access_key_id: "$AWS_AK"
+  secret_access_key: "$AWS_SK"
+  bucket: "$AWS_BUCKET_NAME"
+  skip_cleanup: true
+  region: "$AWS_BUCKET_REGION"
+  local_dir: _site
